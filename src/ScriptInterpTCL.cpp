@@ -252,8 +252,7 @@ int32_t tcl_to_c_cast<int32_t>::from(Tcl_Obj* obj, ScriptInterp* si) {
 uint32_t tcl_to_c_cast<uint32_t>::from(Tcl_Obj* obj, ScriptInterp* si) {
   long v = 0;
   if (Tcl_GetLongFromObj(0, obj, &v) == TCL_OK) {
-//    if ((v < 0 || v > UINT32_MAX)) {
-    if ((v < 0 || v > INT32_MAX)) {
+    if ((v < 0 || v > UINT32_MAX)) {
       //return "OverflowError";
       return 0;
     }
